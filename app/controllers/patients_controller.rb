@@ -2,6 +2,9 @@ class PatientsController < ApplicationController
 
   def index
     @patients = Patient.all
+    if params[:search_query].present?
+      @patients = @patients.basic_search(params[:search_query])
+    end
   end
 
   def new

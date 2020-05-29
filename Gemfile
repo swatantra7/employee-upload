@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootstrap', '~> 4.4.1'
 gem 'haml'
 gem 'jquery-datatables', '1.10.20'
+gem "font-awesome-rails"
 gem 'jquery-rails'
 
 # Use Redis adapter to run Action Cable in production

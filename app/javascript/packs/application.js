@@ -21,6 +21,7 @@ window.$ = $;
 $(document).ready(function() {
   $(".dataTables").dataTable({
     "iDisplayLength": 50,
-    responsive: true
+    responsive: true,
+    searching: false
   });
 });

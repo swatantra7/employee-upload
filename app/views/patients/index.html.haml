@@ -8,14 +8,27 @@
               %a{:href => root_path} Home
             %li.breadcrumb-item.active
               Patients
-        .col-sm-12
-          %h1.m-0.text-dark Manage Patients
-          .box-tools.col-md-3.pull-left{:style=>"top:inherit;"}
-            .float-right
+  .w-100
+  .content-wrapper
+    .content-header
+      .container-fluid
+        .row
+          .col-sm-12
+            .col-md-3
               .input-group
                 .input-group-btn
                   = link_to 'Add New Patients', new_patient_path,
                     class: 'btn btn-primary float-right btn-sm'
+            %br
+            .col-md-4
+              = form_tag patients_path, method: :get do
+                .input-group.input-group-sm
+                  = text_field_tag :search_query, params[:search_query], class: "form-control", placeholder: "Search by name"
+                  = button_tag type: "submit", class: "btn btn-primary btn-sm" do
+                    = fa_icon "search"
+                  = link_to patients_path, class: "btn btn-primary btn-sm" do
+                    = fa_icon "refresh"
+            %br
   .content
     .container-fluid
       .row
