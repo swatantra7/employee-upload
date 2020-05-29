@@ -1,0 +1,41 @@
+.content-wrapper
+  .content-header
+    .container-fluid
+      .row.mb-2
+        .col-sm-12
+          %ol.breadcrumb
+            %li.breadcrumb-item
+              %a{:href => root_path} Home
+            %li.breadcrumb-item.active
+              Patients
+        .col-sm-12
+          %h1.m-0.text-dark Manage Patients
+          .box-tools.col-md-3.pull-left{:style=>"top:inherit;"}
+            .float-right
+              .input-group
+                .input-group-btn
+                  = link_to 'Add New Patients', new_patient_path,
+                    class: 'btn btn-primary float-right btn-sm'
+  .content
+    .container-fluid
+      .row
+        .col-lg-12
+          .card
+            .card-body
+              .table-responsive
+                %table.table.table-bordered.table-hover.dataTables.table-sm.responsive.nowrap{style: 'width:100%!important'}
+                  %thead
+                    %tr
+                      %th.all #
+                      %th.all Name
+                      %th.all Date
+                      %th.desktop Number
+                      %th.desktop Description
+                  %tbody
+                    - @patients.each.with_index(1) do |patient, i|
+                      %tr
+                        %td= i
+                        %td= patient.name
+                        %td= patient.date.strftime("%d %B %Y")
+                        %td= patient.number
+                        %td= patient.description

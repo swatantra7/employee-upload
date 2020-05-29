@@ -1,0 +1,32 @@
+.content-wrapper
+  .content-header
+    .container-fluid
+      .row.mb-2
+        .col-sm-12
+          %ol.breadcrumb
+            %li.breadcrumb-item
+              %a{:href => root_path} Home
+            %li.breadcrumb-item
+              = link_to "Patients", patients_path
+            %li.breadcrumb-item.active
+              New
+        .col-sm-12
+          %h1.m-0.text-dark
+            New Patient
+  .content
+    .container-fluid
+      .row
+        .col-md-12
+          .card
+            .card-body
+              = bootstrap_form_for [@patient], layout: :horizontal, label_col: 'col-md-12', control_col: 'col-md-12' do |f|
+                .modal-body
+                  .row
+                    .col-sm-12.required
+                      .form-group
+                        .form-group.col-md-12
+                          .form-group.col-md-12.mb-3.p-0
+                            .input-group
+                              .custom-file
+                                = f.file_field :patient_file, accept: 'text/csv', :class=>"custom-file-input", label: 'Choosen Patient File', :required=>true
+                  = f.submit 'Submit Patient', class: 'btn btn-success'

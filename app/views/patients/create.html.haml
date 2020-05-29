@@ -1,0 +1,25 @@
+%center
+  .panel.panel-primary
+    .panel-footer
+      %strong
+        Failures (#{@errors.count}):
+      %br/
+      %ul
+        - @errors.each do |error|
+          %li
+            %strong{:style => "color: #f00"}
+              = "#{error[:patient_name]}" " - " "#{error[:message]}"
+      %br/
+      %br/
+      %strong
+        Successful (#{@success.count}):
+      %br/
+      %ul
+        - @success.each do |success|
+          %li
+            %strong{:style => "color: #008a1a"}
+              = "#{success[:patient_name]}"
+      %p
+        Please Click Here To See Imported Patient
+        = link_to 'Imported Patient', patients_path
+
