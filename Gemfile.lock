@@ -125,13 +125,11 @@ GEM
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     pg (0.21.0)
-    polyamorous (2.3.2)
-      activerecord (>= 5.2.1)
     popper_js (1.16.0)
     public_suffix (4.0.5)
     puma (4.3.5)
       nio4r (~> 2.0)
-    rack (2.2.2)
+    rack (2.2.6.2)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -163,11 +161,6 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.20.3, < 2.0)
     rake (13.0.1)
-    ransack (2.3.2)
-      activerecord (>= 5.2.1)
-      activesupport (>= 5.2.1)
-      i18n
-      polyamorous (= 2.3.2)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -251,7 +244,6 @@ DEPENDENCIES
   pg (= 0.21.0)
   puma (~> 4.1)
   rails (~> 6.0.3)
-  ransack
   sass-rails (>= 6)
   selenium-webdriver
   spring
